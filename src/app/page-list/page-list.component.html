@@ -9,8 +9,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of wikiList">
-        <th scope="row">{{data.title}}</th>
-        <td>{{data.snippet}}</td>
+        <th scope="row">
+          <a target="_blank" [href]="'https://https://en.wikipedia.org/?curid='+data.pageid">{{data.title}}</a>
+        </th>
+        <td [innerHTML]="data.snippet"></td>
         <td>{{data.wordcount}}</td>
         <td>{{data.pageid}}</td>
       </tr>
