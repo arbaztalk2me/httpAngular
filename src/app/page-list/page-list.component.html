@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">title</th>
+        <th scope="col">snippet</th>
+        <th scope="col">wordcount</th>
+        <th scope="col">pageid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of wikiList">
+        <th scope="row">{{data.title}}</th>
+        <td>{{data.snippet}}</td>
+        <td>{{data.wordcount}}</td>
+        <td>{{data.pageid}}</td>
+      </tr>
+      
+    </tbody>
+  </table>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WikimediaService } from './wikimedia.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'httpRequest';
+
+  constructor(private wiki:WikimediaService){}
+
+  wikiList:any=[]
+  
+  handleInputP(val:any){
+    this.wiki.hanldleCall(val).subscribe((response:any)=>{
+      this.wikiList=response.query.search
+      console.log(this.wikiList)
+    },(error)=>{
+      console.log(error);
+    })
+  }
 }
