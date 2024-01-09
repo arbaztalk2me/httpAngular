@@ -13,9 +13,11 @@ export class AppComponent {
   wikiList:any=[]
   
   handleInputP(val:any){
-    this.wiki.hanldleCall(val).subscribe((response:any)=>{
-      this.wikiList=response.query.search
-      console.log(this.wikiList)
+    this.wiki.hanldleCall(val).subscribe((response)=>{
+      console.log(response)
+      // this.wikiList=response.query.search
+      this.wikiList=response;
+      // console.log(this.wikiList)
     },(error)=>{
       console.log(error);
     })
